@@ -1,0 +1,12 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Welcome</div>
+</div>
+  <% if current_user.admin? %>
+    <% @teams.each do |team| %>
+    <p><%= link_to team.name, team_path(team.id) %></p>
+  <% end %>
+  <hr>
+    <p><%= 'Teams:' %> <%= Team.count %> registered</p>
+    <% else %>
+    <p><%= link_to current_user.team.name, team_path(current_user.id) %></p>
+<% end %>
