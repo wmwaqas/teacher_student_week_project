@@ -4,6 +4,9 @@
   <% if current_user.admin? %>
     <% @teams.each do |team| %>
     <p><%= link_to team.name, team_path(team.id) %></p>
+    <p><% team.users.each do |user| %></p>
+    <%= user.email %>
+  <% end %>
   <% end %>
   <hr>
     <p><%= 'Teams:' %> <%= Team.count %> registered</p>

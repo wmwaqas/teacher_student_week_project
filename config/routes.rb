@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   # put 'users/change_status'
   # put "/users/change_status" , :as => 'change_status'
-  put 'users/:id' => 'users#change_status', :as => "change_status"
+  put 'users/:id/make_student' => 'users#make_student', :as => "make_student"
+  put 'users/:id/make_admin' => 'users#make_admin', :as => "make_admin"
   devise_for :users
   resources :users
   resources :teams

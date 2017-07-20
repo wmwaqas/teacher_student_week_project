@@ -5,9 +5,8 @@
     <% @users.each do |user| %>
     <p><%= user.email %></p>
     <p> Admin: <%= user.admin %>
-    <%= button_to "Change Status", change_status_path(user.id), method: :put %>
-
-    <button type="button">Student<%= %></button>
+    <%= button_to "Make Student", make_student_path(user.id), method: :put %>
+    <%= button_to "Make Admin", make_admin_path(user.id), method: :put %>
   <% end %>
   <hr>
     <p><%= 'Users:' %> <%= User.count %> registered</p>

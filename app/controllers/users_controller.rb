@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     # end
   end
 
-  def change_status
+  def make_student
     user = User.find(params[:id])
     # user.update(:admin => true)
     user = user.update(:admin => false)
@@ -24,7 +24,10 @@ class UsersController < ApplicationController
     # user.update_attribute(:admin => true)
   end
 
-  def make_student
+  def make_admin
+    user = User.find(params[:id])
+    user = user.update(:admin => true)
+    redirect_to users_path
   end
 
 
