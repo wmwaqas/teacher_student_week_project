@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  attr_accessor :admin
   # before_action :admin_only, except: :show
 
   def index
@@ -16,6 +17,11 @@ class UsersController < ApplicationController
   end
 
   def change_status
+    user = User.find(params[:id])
+    # user.update(:admin => true)
+    user = user.update(:admin => false)
+    redirect_to users_path
+    # user.update_attribute(:admin => true)
   end
 
   def make_student

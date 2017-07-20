@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
 
-  put 'users/change_status'
-  # put 'admin/:id' => 'users#change_status', :as => "change_status"
+  # put 'users/change_status'
+  # put "/users/change_status" , :as => 'change_status'
+  put 'users/:id' => 'users#change_status', :as => "change_status"
   devise_for :users
   resources :users
   resources :teams
