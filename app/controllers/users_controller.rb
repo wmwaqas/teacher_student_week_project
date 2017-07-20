@@ -14,13 +14,23 @@ class UsersController < ApplicationController
     #   end
     # end
   end
-end
 
-# private
-# def is_admin
-#   current_user.admin?
-# end
-#
-# def current_user
-#   @user == current_user
-# end
+  def change_status
+  end
+
+  def make_student
+  end
+
+
+  private
+  def user_params
+    params.require(:user).permit(:admin)
+  end
+end
+  # def is_admin
+  #   current_user.admin?
+  # end
+  #
+  # def current_user
+  #   @user == current_user
+  # end

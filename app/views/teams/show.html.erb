@@ -1,4 +1,13 @@
 <h4>Team Members</h4>
-<% @users.each do |user| %>
-  <span class="label label-success"><%= user.email %></span>
+
+<div class="show">
+<% if @team.users.any? %>
+  <ul>
+    <% @team.users.each do |user| %>
+      <p><%= user.email %></p>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no members for this team</p>
 <% end %>
+</div>
