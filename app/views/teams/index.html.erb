@@ -13,3 +13,4 @@
     <% else %>
     <p><%= link_to current_user.team.name, team_path(current_user.id) %></p>
 <% end %>
+    <%= button_to "Generate Teams", teams_path, method: :post %>
