@@ -1,5 +1,5 @@
 <div class="panel panel-primary">
-  <div class="panel-heading">Welcome</div>
+  <div class="panel-heading">Welcome <%= current_user.email %> </div>
 </div>
   <% if current_user.admin? %>
     <% @teams.each do |team| %>
