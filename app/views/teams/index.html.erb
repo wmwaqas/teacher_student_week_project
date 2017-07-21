@@ -9,8 +9,11 @@
   <% end %>
   <% end %>
   <hr>
+  <%= button_to "Generate Teams", teams_path, method: :post %>
     <p><%= 'Teams:' %> <%= Team.count %> registered</p>
     <% else %>
-    <p><%= link_to current_user.team.name, team_path(current_user.id) %></p>
+    <p><%= current_user.team.name %></p>
+    <p><% current_user.team.users.each do |user| %></p>
+    <%= user.email %>
+    <% end %>
 <% end %>
-    <%= button_to "Generate Teams", teams_path, method: :post %>
